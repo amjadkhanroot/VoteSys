@@ -1,0 +1,19 @@
+#card-body{
+  background: rgb(119, 127, 133);
+}
+
+#card-footer{
+  background: #343A40;
+}
+
+.fa-star {
+color: #dfe23d;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 20px;
+  cursor: pointer;
+ }

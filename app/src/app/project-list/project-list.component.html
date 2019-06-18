@@ -1,17 +1,80 @@
 <div class="container">
-  <div class="card-group">
-    <!-- <div class="crad"  *ngFor='let project of projects'> -->
-        <div class="crad" >
-        <div class="card-body">
-            <p>Hi There!</p>
+  <div class="row mb-4" style="height: 18rem;">
+    <div class="col-md-4">
+      <div
+        class="row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 "
+      >
+        <div
+          id="card-body"
+          class="card-body col p-4 d-flex flex-column position-static"
+        >
+          <h3 class="mb-0">
+            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
+          </h3>
         </div>
-        <div class="card-footer">
-            <p>Vote</p>
-        </div>
+        <div id="card-footer" class="col-12 card-footer"></div>
+      </div>
     </div>
+    <div class="col-md-4">
+      <div
+        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div
+          id="card-body"
+          class="card-body col p-4 d-flex flex-column position-static"
+        >
+          <h3 class="mb-0">
+            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
+          </h3>
+        </div>
+        <div id="card-footer" class=" poll-right col-12 card-footer rounded-bottom">
 
-    
-    
+            <button class="btn" (click)="vote()">
+              <i class="fa fa-thumbs-up"></i>
+            </button>
+
+            <div class="crop" [style.width.px]="starWidth" [title]="rating">
+              <div style="width: 75px">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div
+        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div
+          id="card-body"
+          class="card-body col p-4 d-flex flex-column position-static"
+        >
+          <h3 class="mb-0">
+            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
+          </h3>
+        </div>
+        <div id="card-footer" class=" col-12 card-footer"></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div
+        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div
+          id="card-body"
+          class="card-body col p-4 d-flex flex-column position-static"
+        >
+          <h3 class="mb-0">
+            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
+          </h3>
+        </div>
+        <div id="card-footer" class=" col-12 card-footer"></div>
+      </div>
+    </div>
   </div>
-
 </div>
