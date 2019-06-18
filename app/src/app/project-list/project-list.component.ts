@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProject } from './Project';
+import { ProjectService } from './service';
 
 @Component({
   selector: 'app-project-list',
@@ -8,8 +9,7 @@ import { IProject } from './Project';
 })
 export class ProjectListComponent implements OnInit {
   voteN: number = 0;
-  imgUrl: string = "img/NoVote2.png";
-
+  errorMessage: string;
   projects: IProject[] = [];
   rating: number;
   starWidth: number;
@@ -19,16 +19,27 @@ export class ProjectListComponent implements OnInit {
       }
 
 
-  constructor() { }
+  constructor(private projectService: ProjectService ) { 
+    this.projectService.getProject().subscribe(project => {
+      console.log(project);
+      
+      });
+  }
 
   ngOnInit() {
+    this.projectService.getProject().subscribe(
+      project => {
+        (this.projects = project)
+        console.log(this.projects);
+      },
+      error => (this.errorMessage = <any>error)
+    );
   }
 
   vote(): void {
     console.log('vote');
     this.voteN++;
     console.log(this.voteN);
-    this.imgUrl = "img/Voted.png";
   }
 
 }
