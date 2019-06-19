@@ -4,21 +4,21 @@
         <div class="card-deck justify-content-center m-2">
             <div class="single-blog-post style3 mb-30 wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                 <div class="blog-thumb mb-30">
-                    <img src="assets/img/bg-img/7.jpg" alt="">
+                    <img src="{{p.pic}}" alt="">
                     
                 </div>
                 <div class="blog-content">
                     <a href="#" class="post-tag">{{p.type}}</a>
                     <a href="#" class="post-title">{{p.name}}</a>
-                    <div class="post-meta d-flex justify-content-between m-25">
-                        <a href="#"><button class="btn" (click)="updateProjects(p)">
+                    <div class="post-meta d-flex justify-content-between m-25 row">
+                        <a href="#" class="col-4"><button class="btn" (click)="updateProjects(p)">
                             <i class="fa fa-thumbs-up"></i>
                           </button></a>
-                        <a href="#">{{p.score}}</a>
-                        <div class="d-flex">
+                        <a class="col-4" href="#">{{p.score}}</a>
+                        <div class="d-flex col-4">
                             <a href="#">
-                                <span class="crop fa-pull-right" [style.width.px]="starWidth">
-                                    <div >
+                                <span  style="float: left;" [style.width.px]="starWidth" >
+                                    <div id="starWidth" style="width: 75px">
                                       <span class="fa fa-star"></span>
                                       <span class="fa fa-star"></span>
                                       <span class="fa fa-star"></span>
