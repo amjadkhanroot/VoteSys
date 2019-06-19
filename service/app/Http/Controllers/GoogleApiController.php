@@ -48,19 +48,17 @@ class GoogleApiController extends Controller
     public function store($projects)
     {
         $scores = Project::select('score')->get();
-        if (count($scores) != 0) {
             Project::truncate();
             foreach ($projects as $p) {
                 $project = new Project();
                 $project->name = $p['name'];
                 $project->description = $p['description'];
                 $project->type = $p['type'];
-                $project->picture = $p['pic'];
+                $project->pic = $p['pic'];
                 $project->score = 0;
                 $project->save();
             }
         }
-    }
 
     //update googlesheet with the body of the massage
     public function update()

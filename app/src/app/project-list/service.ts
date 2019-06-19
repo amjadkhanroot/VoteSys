@@ -12,7 +12,7 @@ import { IProject } from './Project';
   providedIn: "root"
 })
 export class ProjectService {
-  private ProjectAPI = "http://localhost:4200/api/googlesheet";
+  private ProjectAPI = "http://localhost:4200/api/fetch";
 
 
   constructor(public http: HttpClient){
@@ -26,6 +26,15 @@ export class ProjectService {
       catchError(this.handleError)
     );
   }
+
+
+  updateProject(project: IProject): Observable<IProject[]>{
+    return this.http.put<IProject[]>(this.ProjectAPI+'/'+project.name, project)
+    .pipe(
+      tap(data => console.log("All: " + JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+}
 
 
 
