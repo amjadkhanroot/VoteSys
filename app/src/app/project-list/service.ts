@@ -28,6 +28,15 @@ export class ProjectService {
   }
 
 
+  updateProject(project: IProject): Observable<IProject[]>{
+    return this.http.put<IProject[]>(this.ProjectAPI+'/'+project.name, project)
+    .pipe(
+      tap(data => console.log("All: " + JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+}
+
+
 
   private handleError(err: HttpErrorResponse) {
     let errorMessage: string;

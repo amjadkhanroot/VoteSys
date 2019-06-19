@@ -17,8 +17,9 @@ color: #dfe23d;
 .btn {
   border: none;
   color: white;
-  padding: 0.5px;
-  margin-right: 50px;
+  padding: 0px;
+  margin-top: 11px;
+  position: fixed;
   font-size: 20px;
   
  }
@@ -30,3 +31,21 @@ color: #dfe23d;
 .img {
   height: auto;
   max-width: 100%; }
+
+element.style {
+    visibility: visible;
+    animation-delay: 400ms;
+    animation-name: fadeInUp;
+}
+
+.single-blog-post {
+  position: relative;
+  z-index: 1;
+}
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}

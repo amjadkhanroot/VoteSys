@@ -1,10 +1,41 @@
 <div class="container ">
   <div class="row">
     <div class="col-md-4" *ngFor="let p of projects">
-        <div class="card-deck justify-content-center">
-            <div class="card mb-md-4 single-blog-post dark position-relative">
+        <div class="card-deck justify-content-center m-2">
+            <div class="single-blog-post style3 mb-30 wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
+                <div class="blog-thumb mb-30">
+                    <img src="assets/img/bg-img/7.jpg" alt="">
+                    
+                </div>
+                <div class="blog-content">
+                    <a href="#" class="post-tag">{{p.type}}</a>
+                    <a href="#" class="post-title">{{p.name}}</a>
+                    <div class="post-meta d-flex justify-content-between m-25">
+                        <a href="#"><button class="btn" (click)="updateProjects(p)">
+                            <i class="fa fa-thumbs-up"></i>
+                          </button></a>
+                        <a href="#">{{p.score}}</a>
+                        <div class="d-flex">
+                            <a href="#">
+                                <span class="crop fa-pull-right" [style.width.px]="starWidth">
+                                    <div >
+                                      <span class="fa fa-star"></span>
+                                      <span class="fa fa-star"></span>
+                                      <span class="fa fa-star"></span>
+                                      <span class="fa fa-star"></span>
+                                      <span class="fa fa-star"></span>
+                                    </div>
+                                  </span>
+                               </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div id="single-blog-post" class="card mb-md-4 single-blog-post dark position-relative">
               <div class="card-body text-center blog-content ">
-                  <a href="#"><img class="mb-2" src="assets/img/bg-img/1.jpg" alt=""></a>
                   <a href="#" class="card-text post-tag">{{p.type}}</a>
                   <a href="#" class="card-text post-title m-3">{{p.name}}</a>
                   <div class="row post-meta  d-inline-flex">
@@ -22,7 +53,7 @@
                           </span>
                   </div>
               </div>
-            </div>
+            </div> -->
           </div>
     </div>
   </div>
