@@ -39,10 +39,11 @@
                   <a href="#" class="card-text post-tag">{{p.type}}</a>
                   <a href="#" class="card-text post-title m-3">{{p.name}}</a>
                   <div class="row post-meta  d-inline-flex">
-                      <span><button class="btn" (click)="vote()">
+                      <span><button style="float: left;" class="btn" (click)="vote(); " [disabled]="clicked">
+
                           <i class="fa fa-thumbs-up"></i>
                         </button></span>
-                        <span class="crop fa-pull-right" [style.width.px]="starWidth">
+                        <span class="crop fa-pull-right"  style="float: left;" [style.width.px]="getStars(voteN)" [title]="voteN">
                             <div >
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
@@ -51,13 +52,17 @@
                               <span class="fa fa-star"></span>
                             </div>
                           </span>
+                          <div >
+                              <i style="float: left;" class="fa fa-user"></i>
+                              <p style="float: left;" class="userN">{{ voteN }}</p>
+                            </div>
                   </div>
               </div>
             </div> -->
           </div>
     </div>
   </div>
-    
+
 
 
     <!-- <div class="container"  *ngFor="let p of projects">
@@ -96,7 +101,7 @@
             <button class="btn" (click)="vote()">
                 <i class="fa fa-thumbs-up"></i>
               </button>
-  
+
               <div class="crop" [style.width.px]="starWidth">
                 <div >
                   <span class="fa fa-star"></span>
@@ -110,7 +115,7 @@
       </div>
     </div>
 
-    
+
     </div>
       </div> -->
     </div>

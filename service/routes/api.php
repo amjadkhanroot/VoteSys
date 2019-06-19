@@ -18,4 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/googlesheet', 'GoogleApiController@index');
+Route::post('/store', 'ProjectsController@store');
+Route::post('/update', 'ProjectsController@update');
+
 

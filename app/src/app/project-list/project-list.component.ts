@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { IProject } from './Project';
 import { ProjectService } from './service';
 
@@ -9,20 +9,23 @@ import { ProjectService } from './service';
 })
 export class ProjectListComponent implements OnInit {
   voteN: number = 0;
+  clicked: boolean = false;
   errorMessage: string;
   projects: IProject[] = [];
-  rating: number;
   starWidth: number;
-
     ngOnChanges(): void {
         this.starWidth = this.voteN * 75 / 5;
       }
 
+    getStars(v: number) {
+      v = this.voteN;
+       return this.starWidth = v* 75 / 15;
+      }
 
-  constructor(private projectService: ProjectService ) { 
+  constructor(private projectService: ProjectService ) {
     this.projectService.getProject().subscribe(project => {
       console.log(project);
-      
+
       });
   }
 
