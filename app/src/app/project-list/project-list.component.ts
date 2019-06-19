@@ -43,10 +43,9 @@ export class ProjectListComponent implements OnInit {
 
   updateProjects(project: IProject){
     console.log('updateProject');
+    this.voteN = 0;
     this.vote();
-    // let s = parseInt(project.score);
-    //console.log(s);
-    //this.s = s + this.voteN;
+    project.score = project.score + this.voteN;
     this.projectService.updateProject(project).subscribe(p => {
       for(let i = 0;i < this.projects.length;i++){
           if(this.projects[i].name.toLocaleLowerCase().indexOf(project.name)  !== -1){

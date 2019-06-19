@@ -12,8 +12,8 @@ import { IProject } from './Project';
   providedIn: "root"
 })
 export class ProjectService {
-  private ProjectAPI = "http://localhost:4200/api/fetch";
-
+  private getProjectAPI = "http://localhost:4200/api/fetch";
+  private putProjectAPI = "http://localhost:4200/api/update";
 
   constructor(public http: HttpClient){
 
@@ -21,7 +21,7 @@ export class ProjectService {
 
   getProject(): Observable<IProject[]> {
     console.log("getProject Service");
-    return this.http.get<IProject[]>(this.ProjectAPI).pipe(
+    return this.http.get<IProject[]>(this.getProjectAPI).pipe(
       tap(data => console.log("All: " + JSON.stringify(data))),
       catchError(this.handleError)
     );
@@ -29,7 +29,7 @@ export class ProjectService {
 
 
   updateProject(project: IProject): Observable<IProject[]>{
-    return this.http.put<IProject[]>(this.ProjectAPI+'/'+project.name, project)
+    return this.http.put<IProject[]>(this.putProjectAPI, project)
     .pipe(
       tap(data => console.log("All: " + JSON.stringify(data))),
       catchError(this.handleError)
