@@ -41,7 +41,7 @@ export class ProjectService {
   private handleError(err: HttpErrorResponse) {
     let errorMessage: string;
     if (err.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
+      // A client-side or network error occurred. Handle it acco rdingly.
       errorMessage = `An error occurred: ${err.error.message}`;
     } else {
       // The backend returned an unsuccessful response code.

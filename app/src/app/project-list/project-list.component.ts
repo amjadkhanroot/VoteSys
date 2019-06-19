@@ -8,7 +8,7 @@ import { ProjectService } from './service';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  voteN: number = 0;
+  voteN: number;
   clicked: boolean = false;
   errorMessage: string;
   projects: IProject[] = [];
@@ -28,6 +28,7 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.getProjects();
+
   }
 
 
@@ -51,6 +52,7 @@ export class ProjectListComponent implements OnInit {
     this.projectService.updateProject(project).subscribe(p => {
       for(let i = 0;i < this.projects.length;i++){
           if(this.projects[i].name.toLocaleLowerCase().indexOf(project.name)  !== -1){
+            
             this.projects.splice(i,1);
           }
       }
