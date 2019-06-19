@@ -13,9 +13,6 @@ export class ProjectListComponent implements OnInit {
   errorMessage: string;
   projects: IProject[] = [];
   starWidth: number;
-    ngOnChanges(): void {
-        this.starWidth = this.voteN * 75 / 5;
-      }
 
     getStars(v: number) {
       v = this.voteN;

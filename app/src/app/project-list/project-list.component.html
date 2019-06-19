@@ -1,40 +1,61 @@
 <div class="container ">
   <div class="row">
     <div class="col-md-4" *ngFor="let p of projects">
-        <div class="card-deck justify-content-center m-2">
-            <div class="single-blog-post style3 mb-30 wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
-                <div class="blog-thumb mb-30">
-                    <img src="assets/img/bg-img/7.jpg" alt="">
-                    
+      <div class="card-deck justify-content-center m-2">
+        <div
+          class="single-blog-post style3 mb-30 wow fadeInUp"
+          data-wow-delay="400ms"
+          style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;"
+        >
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <!-- <div class="blog-thumb mb-30"> -->
+                  <img src="assets/img/bg-img/7.jpg" alt="" />
+                <!-- </div> -->
+                <div class="flip-box-back">
+                  <h2>Paris</h2>
+                  <p>What an amazing city</p>
                 </div>
-                <div class="blog-content">
-                    <a href="#" class="post-tag">{{p.type}}</a>
-                    <a href="#" class="post-title">{{p.name}}</a>
-                    <div class="post-meta d-flex justify-content-between m-25">
-                        <a href="#"><button class="btn" (click)="updateProjects(p)">
-                            <i class="fa fa-thumbs-up"></i>
-                          </button></a>
-                        <a href="#">{{p.score}}</a>
-                        <div class="d-flex">
-                            <a href="#">
-                                <span class="crop fa-pull-right" [style.width.px]="starWidth">
-                                    <div >
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                    </div>
-                                  </span>
-                               </a>
-                            
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+          <div class="blog-content">
+            <a href="#" class="post-tag">{{ p.type }}</a>
+            <a href="#" class="post-title">{{ p.name }}</a>
+            <div class="post-meta d-flex justify-content-between m-25">
+              <!-- ; clicked=true; -->
+              <a href="#"
+                ><button
+                  class="btn"
+                  (click)="updateProjects(p)"
+                  [disabled]="clicked"
+                >
+                  <i class="fa fa-thumbs-up"></i></button
+              ></a>
+              <a href="#">{{ p.score }}</a>
+              <div class="d-flex">
+                <a href="#">
+                  <span
+                    class="crop fa-pull-right"
+                    [style.width.px]="getStars(voteN)"
+                    [title]="voteN"
+                  >
+                    <div style="width: 75px;">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
-            <!-- <div id="single-blog-post" class="card mb-md-4 single-blog-post dark position-relative">
+        <!-- <div id="single-blog-post" class="card mb-md-4 single-blog-post dark position-relative">
               <div class="card-body text-center blog-content ">
                   <a href="#"><img class="mb-2" src="{{p.pic}}" alt=""></a>
                   <a href="#" class="card-text post-tag">{{p.type}}</a>
@@ -60,13 +81,11 @@
                   </div>
               </div>
             </div> -->
-          </div>
+      </div>
     </div>
   </div>
 
-
-
-    <!-- <div class="container"  *ngFor="let p of projects">
+  <!-- <div class="container"  *ngFor="let p of projects">
         <div class="card single-blog-post dark position-relative mb-4" >
             <div class="card-body  blog-content p-4">
                 <a href="#" class="post-tag">{{p.type}}</a>
@@ -81,7 +100,7 @@
         </div>
 </div> -->
 
- <!-- <div class="row mb-5" >
+  <!-- <div class="row mb-5" >
     <div class="card-deck col-md-6">
         <div  *ngFor="let p of projects">
       <div class="card  row flex-md-row mb-5 single-blog-post dark ">
@@ -119,4 +138,4 @@
 
     </div>
       </div> -->
-    </div>
+</div>
