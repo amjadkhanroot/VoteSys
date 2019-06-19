@@ -12,7 +12,7 @@ import { IProject } from './Project';
   providedIn: "root"
 })
 export class ProjectService {
-  private ProjectAPI = "http://localhost:4200/api/googlesheet";
+  private ProjectAPI = "http://localhost:4200/api/fetch";
 
 
   constructor(public http: HttpClient){
