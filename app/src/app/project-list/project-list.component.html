@@ -1,95 +1,85 @@
-<div class="container">
-  <div class="row mb-4" style="height: 18rem;">
-    <div class="col-md-4">
-      <div
-        class="row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 "
-      >
-        <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
-        >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
-        </div>
-        <div id="card-footer" class="col-12 card-footer"></div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div
-        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      >
-        <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
-        >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
-        </div>
-        <div id="card-footer" class="col-12 card-footer rounded-bottom ">
-
-            <button class="btn" (click)="vote()">
-              <i class="fa fa-thumbs-up"></i>
-            </button>
-
-            <div class="crop" [style.width.px]="starWidth">
-              <div style="width: 75px">
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+<div class="container ">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let p of projects">
+        <div class="card-deck justify-content-center">
+            <div class="card mb-md-4 single-blog-post dark position-relative">
+              <div class="card-body text-center blog-content ">
+                  <a href="#"><img class="mb-2" src="assets/img/bg-img/1.jpg" alt=""></a>
+                  <a href="#" class="card-text post-tag">{{p.type}}</a>
+                  <a href="#" class="card-text post-title m-3">{{p.name}}</a>
+                  <div class="row post-meta  d-inline-flex">
+                      <span><button class="btn" (click)="vote()">
+                          <i class="fa fa-thumbs-up"></i>
+                        </button></span>
+                        <span class="crop fa-pull-right" [style.width.px]="starWidth">
+                            <div >
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                            </div>
+                          </span>
+                  </div>
               </div>
             </div>
           </div>
-
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div
-        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      >
-        <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
-        >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
-        </div>
-        <div id="card-footer" class=" col-12 card-footer"></div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div
-        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      >
-        <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
-        >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
-        </div>
-        <div id="card-footer" class=" col-12 card-footer"></div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div
-        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      >
-        <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
-        >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
-        </div>
-        <div id="card-footer" class=" col-12 card-footer"></div>
-      </div>
     </div>
   </div>
-</div>
+    
+
+
+    <!-- <div class="container"  *ngFor="let p of projects">
+        <div class="card single-blog-post dark position-relative mb-4" >
+            <div class="card-body  blog-content p-4">
+                <a href="#" class="post-tag">{{p.type}}</a>
+                <a href="#" class="post-title">{{p.name}}</a>
+                <div class="post-meta ">
+                    <a href="#"><img src="assets/img/core-img/author.png" alt=""> By James Smith</a>
+                    <a href="#"><img src="assets/img/core-img/calender.png" alt=""> July 23, 2018</a>
+                    <a href="#"><img src="assets/img/core-img/chat.png" alt=""> 5</a>
+                    <a href="#"><img src="assets/img/core-img/like.png" alt=""> 12k</a>
+                </div>
+            </div>
+        </div>
+</div> -->
+
+ <!-- <div class="row mb-5" >
+    <div class="card-deck col-md-6">
+        <div  *ngFor="let p of projects">
+      <div class="card  row flex-md-row mb-5 single-blog-post dark ">
+        <div class="card-body flex-column  blog-content">
+            <a href="#" class="post-tag">{{p.type}}</a>
+            <a href="#" class="post-title">{{p.name}}</a>
+        </div>
+        <div class="card-body">
+
+        </div>
+
+        <div class="card-footer post-meta">
+            <a href="#"><img src="assets/img/core-img/author.png" alt=""> By James Smith</a>
+            <a href="#"><img src="assets/img/core-img/calender.png" alt=""> July 23, 2018</a>
+            <a href="#"><img src="assets/img/core-img/chat.png" alt=""> 5</a>
+            <a href="#"><img src="assets/img/core-img/like.png" alt=""> 12k</a>
+
+            <button class="btn" (click)="vote()">
+                <i class="fa fa-thumbs-up"></i>
+              </button>
+  
+              <div class="crop" [style.width.px]="starWidth">
+                <div >
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    
+    </div>
+      </div> -->
+    </div>
