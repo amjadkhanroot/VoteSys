@@ -1,40 +1,44 @@
 <div class="container">
-  <div class="row mb-4" style="height: 18rem;">
-    <div class="col-md-4">
-      <div
-        class="row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 "
-      >
+    <div class="row mb-4" style="height: 18rem;">
+      <div class="col-md-4">
         <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
+          class="row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 "
         >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
+          <div
+            id="card-body"
+            class="card-body col p-4 d-flex flex-column position-static"
+          >
+            <h3 class="mb-0">
+              <strong class="d-inline-block mb-2 text-light">Project Name</strong>
+            </h3>
+          </div>
+          <div id="card-footer" class="col-12 card-footer"></div>
         </div>
-        <div id="card-footer" class="col-12 card-footer"></div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div
-        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      >
+      <div class="col-md-4">
         <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
+          class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
         >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
-        </div>
-        <div id="card-footer" class=" poll-right col-12 card-footer rounded-bottom">
+          <div
+            id="card-body"
+            class="card-body col p-4 d-flex flex-column position-static"
+          >
+            <h3 class="mb-0">
+              <strong class="d-inline-block mb-2 text-light">Project Name</strong>
+            </h3>
+          </div>
+          <div style="float: left;"
+            id="card-footer"
+            class=" d-inline-block col-12 card-footer rounded-bottom"
 
-            <button class="btn" (click)="vote()">
+          >
+            <button style="float: left;" class="btn" (click)="vote(); " [disabled]="clicked">
+
               <i class="fa fa-thumbs-up"></i>
             </button>
 
-            <div class="crop" [style.width.px]="starWidth" [title]="rating">
-              <div style="width: 75px">
+            <div style="float: left;" class="crop" [style.width.px]="getStars(voteN)" [title]="voteN">
+              <div style="width: 75px; float: left;">
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
@@ -42,39 +46,42 @@
                 <span class="fa fa-star"></span>
               </div>
             </div>
+            <div >
+              <i style="float: left;" class="fa fa-user"></i>
+              <p style="float: left;" class="userN">{{ voteN }}</p>
+            </div>
           </div>
-
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div
-        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      >
-        <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
-        >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
         </div>
-        <div id="card-footer" class=" col-12 card-footer"></div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div
-        class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      >
+      <div class="col-md-4">
         <div
-          id="card-body"
-          class="card-body col p-4 d-flex flex-column position-static"
+          class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
         >
-          <h3 class="mb-0">
-            <strong class="d-inline-block mb-2 text-light">Project Name</strong>
-          </h3>
+          <div
+            id="card-body"
+            class="card-body col p-4 d-flex flex-column position-static"
+          >
+            <h3 class="mb-0">
+              <strong class="d-inline-block mb-2 text-light">Project Name</strong>
+            </h3>
+          </div>
+          <div id="card-footer" class=" col-12 card-footer"></div>
         </div>
-        <div id="card-footer" class=" col-12 card-footer"></div>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="card row no-gutters border rounded-top overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+        >
+          <div
+            id="card-body"
+            class="card-body col p-4 d-flex flex-column position-static"
+          >
+            <h3 class="mb-0">
+              <strong class="d-inline-block mb-2 text-light">Project Name</strong>
+            </h3>
+          </div>
+          <div id="card-footer" class=" col-12 card-footer"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>

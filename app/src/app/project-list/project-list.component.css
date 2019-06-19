@@ -1,14 +1,27 @@
+.crop {
+  overflow: hidden;
+}
+
 #card-body{
   background: rgb(119, 127, 133);
 }
 
+/* button::after {
+  color: royalblue;
+} */
+
 #card-footer{
   background: #343A40;
+  position: relative;
 }
 
 .fa-star {
 color: #dfe23d;
 }
+
+.fa-star-o {
+  color: #ffffff;
+  }
 
 .btn {
   border: none;
@@ -17,3 +30,17 @@ color: #dfe23d;
   font-size: 20px;
   cursor: pointer;
  }
+
+ .fa-user{
+  border: none;
+  padding: 12px 16px;
+  color: white;
+  font-size: 20px;
+ }
+
+ .userN {
+  padding: 12px 16px;
+  color: white;
+  font-size: 20px;
+ }
+
