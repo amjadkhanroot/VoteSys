@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('description');
             $table->string('type');
             $table->string('picture');
-            $table->string('score');
+            $table->integer('score');
             $table->timestamps();
         });
     }
