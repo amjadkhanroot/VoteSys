@@ -6,9 +6,6 @@
   background: rgb(119, 127, 133);
 }
 
-/* button::after {
-  color: royalblue;
-} */
 
 #card-footer{
   background: #343A40;
@@ -26,7 +23,7 @@ color: #dfe23d;
 .btn {
   border: none;
   color: white;
-  padding: 0px;
+  padding: 0px 0px;
   margin-top: 11px;
   position: relative;
   font-size: 20px;
